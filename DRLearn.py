@@ -14,7 +14,7 @@ import seaborn as sns
 import shap
 import warnings
 
-warnings.filterwarnings("ignore")  # Suppress all warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 class DRLearn:
     def __init__(self):
