@@ -1,16 +1,17 @@
+from eli5 import show_weights
+from matplotlib.ticker import PercentFormatter
+
 from sklearn.tree import DecisionTreeClassifier, plot_tree, export_graphviz
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import classification_report, accuracy_score
 
-from matplotlib.ticker import PercentFormatter
 from statistics import mean
 
 import matplotlib.pyplot as plt
-import seaborn as sns
 import pandas as pd
+import seaborn as sns
 import shap
-
 
 
 class DRLearn:
@@ -145,3 +146,17 @@ class DRLearn:
         )
 
         return plot
+
+    @staticmethod
+    def explain_model(model, X_train):
+        show_weights(
+            model,
+            feature_names=X_train.columns.tolist(),
+            show=(
+                "method",
+                "description",
+                "transition_features",
+                "targets",
+                "feature_importances",
+            ),
+        )
