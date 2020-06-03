@@ -149,7 +149,7 @@ class DRLearn:
 
     @staticmethod
     def explain_model(model, X_train):
-        show_weights(
+        return show_weights(
             model,
             feature_names=X_train.columns.tolist(),
             show=(
