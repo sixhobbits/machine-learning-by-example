@@ -1,20 +1,21 @@
-from eli5 import show_weights
 from matplotlib.ticker import PercentFormatter
-
-from sklearn.tree import DecisionTreeClassifier, plot_tree, export_graphviz
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import classification_report, accuracy_score
-
+import matplotlib.pyplot as plt
 from statistics import mean
 
-import matplotlib.pyplot as plt
-import pandas as pd
-import seaborn as sns
-import shap
 import warnings
+with warnings.catch_warnings():
+    warnings.filterwarnings("ignore",category=FutureWarning)
 
-warnings.simplefilter(action='ignore', category=FutureWarning)
+    from sklearn.tree import DecisionTreeClassifier, plot_tree, export_graphviz
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import LabelEncoder
+    from sklearn.metrics import classification_report, accuracy_score
+    import pandas as pd
+    import seaborn as sns
+    import shap
+    import warnings
+    from eli5 import show_weights
+
 
 class DRLearn:
     def __init__(self):
