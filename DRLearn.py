@@ -25,8 +25,8 @@ class DRLearn:
     @staticmethod
     def plot_passenger_gender(df):
         fig = plt.figure(figsize=(14, 6), dpi=100)
-        sns.set_style("whitegrid")
         sns.set(font_scale=2)
+        sns.set_style("whitegrid")
         plt.grid(False)
         f = sns.barplot(
             x="Sex", y="Survived", data=df, palette="Greys", ci=0, edgecolor="dimgrey"
@@ -44,8 +44,8 @@ class DRLearn:
     def plot_passenger_class(df):
         fig = plt.figure(figsize=(14, 6), dpi=100)
         class_map = {1: "1st class", 2: "2nd class", 3: "3rd class"}
-        sns.set_style("whitegrid")
         sns.set(font_scale=2)
+        sns.set_style("whitegrid")
 
         df["pclass_label"] = df["Pclass"].apply(lambda x: class_map.get(x))
         plt.grid(False)
