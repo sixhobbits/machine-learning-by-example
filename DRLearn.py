@@ -32,9 +32,9 @@ class DRLearn:
             x="Sex", y="Survived", data=df, palette="Greys", ci=0, edgecolor="dimgrey"
         )
         f.set(
-            title="Survival rate by Gender",
+            title="Survival rate by gender",
             ylabel="Survival rate (%)",
-            xlabel="Gender",
+            xlabel="",
         )
 
         ylabels = ["{:.0%}".format(x) for x in f.get_yticks()]
@@ -58,7 +58,7 @@ class DRLearn:
             ci=0,
             edgecolor="dimgrey",
         )
-        f.set(title="Survival rate by Class", xlabel="", ylabel="Survival rate")
+        f.set(title="Survival rate by class", xlabel="", ylabel="Survival rate")
 
         ylabels = ["{:.0%}".format(x) for x in f.get_yticks()]
         _ = f.set_yticklabels(ylabels)
